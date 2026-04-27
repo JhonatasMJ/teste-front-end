@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import TopBar from "./components/TopBar";
 import Logo from "@/assets/Logo.svg";
 import Banner from "./components/Banner";
+import Categories from "./components/Categories";
 
 export default function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -36,6 +37,7 @@ export default function App() {
             <TopBar />
             <Header />
             <Banner/>
+            <Categories />
         </div>
     );
 }

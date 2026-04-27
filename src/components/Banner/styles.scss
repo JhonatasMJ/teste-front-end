@@ -1,5 +1,6 @@
 .banner {
-    background-image: url("@/assets/Banner.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)),
+        url("@/assets/Banner.png");
     width: 100%;
     min-height: 390px;
     display: flex;
