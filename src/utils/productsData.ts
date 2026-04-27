@@ -1,6 +1,5 @@
 import type { Product, ProductProps } from "@/types/productsData";
 
-/** Mock da API — `listPrice` derivado só para vitrine com “de/por” como no layout */
 const rawProducts: Omit<Product, "listPrice">[] = [
   {
     productName: "Iphone 11 PRO MAX BRANCO 1",

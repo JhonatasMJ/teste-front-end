@@ -5,7 +5,7 @@ import Logo from "@/assets/Logo.svg";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
 import { productsData } from "./utils/productsData";
-import ProductCard from "./components/ProductCard";
+import Products from "./components/Products";
 
 export default function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -40,7 +40,7 @@ export default function App() {
             <Header />
             <Banner/>
             <Categories />
-            <ProductCard {...productsData} />
+            <Products products={productsData.products} />
         </div>
     );
 }
