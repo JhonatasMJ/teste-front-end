@@ -1,13 +1,25 @@
 .button {
-    background: var(--primary-btn-color);
-    color: var(--white-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease;
-  }
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: opacity 0.2s ease;
+  margin-top: 24px;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button--primary {
+  background-color: var(--primary-btn-color);
+  color: #271C47;
+}
+
+.button--secondary {
+  background-color: #ffffff;
+  border: 1px solid #005cff;
+  color: #005cff;
+}
