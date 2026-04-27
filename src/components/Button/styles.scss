@@ -1,0 +1,13 @@
+.button {
+    background: var(--primary-btn-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+  }

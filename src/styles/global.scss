@@ -1,0 +1,25 @@
+:root {
+    --font-default: 'Poppins', sans-serif;
+    --title-color:#3442B5;
+    --title-bold-color: #3019B2;
+    --secondary-color: #271C47;
+    --subtitle-color: #9F9F9F;
+    --primary-btn-color:#F7CA11;
+    --secondary-btn-color:#3442B5;
+    --white-color:#FFFFFF;
+    --text-color: #271C47;
+    --input-color: #F6F5F2;
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-default);
+    color: var(--text-color);
+    background: #fff;
+  }
