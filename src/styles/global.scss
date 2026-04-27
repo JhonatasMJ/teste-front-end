@@ -23,3 +23,41 @@
     color: var(--text-color);
     background: #fff;
   }
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--title-color);
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.splash-screen.is-exiting {
+    opacity: 0;
+}
+
+.splash-logo {
+    width: min(55vw, 240px);
+    animation: logo-grow 1.2s ease-out forwards;
+}
+
+@keyframes logo-grow {
+    0% {
+        transform: scale(0.35);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
