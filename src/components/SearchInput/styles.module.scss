@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  gap: 8px;
+  background: $input-color;
+  border-radius: 10px;
+  padding: 10px 12px;
+
+  input {
+    flex: 1;
+    width: 90%;
+    font-size: 14px;
+    font-weight: 500;
+    color: $subtitle-color;
+    background: transparent;
+
+    &::placeholder {
+      color: $subtitle-color;
+      opacity: 0.8;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+}

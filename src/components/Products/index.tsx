@@ -4,7 +4,7 @@ import Title from "@/components/Title";
 import CategoryTabs from "@/components/CategoryTabs";
 import ProductsCarousel from "@/components/ProductsCarousel";
 import ProductModal from "@/components/ProductModal";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 type TabId =
   | "celular"
@@ -32,8 +32,8 @@ export default function Products({ products }: ProductsProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
-    <section className="products" aria-labelledby="products-section-title">
-      <div className="products-inner">
+    <section className={styles.section} aria-labelledby="products-section-title">
+      <div className={styles.inner}>
         <Title
           title="Produtos relacionados"
           titleId="products-section-title"

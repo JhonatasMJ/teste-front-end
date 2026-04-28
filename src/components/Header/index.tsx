@@ -1,5 +1,5 @@
 import SearchInput from "../SearchInput";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 import Logo from "@/assets/Logo.svg";
 import UserIcon from "@/assets/icons/UserCircle.svg";
 import CartIcon from "@/assets/icons/ShoppingCart.svg";
@@ -10,19 +10,19 @@ import CrownIcon from "@/assets/icons/Crown.svg";
 
 export default function Header() {
     return (
-        <header className="header">
-            <div className="header-container">
-                <div className="header-main">
+        <header className={styles.root}>
+            <div className={styles.container}>
+                <div className={styles.main}>
                     <img src={Logo} alt="Econverse" />
                     <SearchInput />
-                    <div className="header-actions">
+                    <div className={styles.actions}>
                         <a href="#"><img src={BoxIcon} alt="Telefone" /></a>
                         <a href="#"><img src={UserIcon} alt="Login" /></a>
                         <a href="#"><img src={CartIcon} alt="Carrinho" /></a>
                         <a href="#"><img src={HeartIcon} alt="Favoritos" /></a>
                     </div>
                 </div>
-                <div className="header-menu">
+                <div className={styles.menu}>
                     <a href="#">TODAS AS CATEGORIAS</a>
                     <a href="#">SUPERMERCADO</a>
                     <a href="#">LIVROS</a>

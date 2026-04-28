@@ -1,4 +1,4 @@
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 export type TitleProps = {
   title: string;
@@ -7,12 +7,12 @@ export type TitleProps = {
 
 export default function Title({ title, titleId }: TitleProps) {
   return (
-    <div className="section-heading">
-      <span className="section-heading-line" aria-hidden />
-      <h2 id={titleId} className="section-heading-title">
+    <div className={styles.root}>
+      <span className={styles.line} aria-hidden />
+      <h2 id={titleId} className={styles.heading}>
         {title}
       </h2>
-      <span className="section-heading-line" aria-hidden />
+      <span className={styles.line} aria-hidden />
     </div>
   );
 }

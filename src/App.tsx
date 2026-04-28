@@ -28,8 +28,10 @@ export default function App() {
 
     if (showSplash) {
         return (
-            <div className={`splash-screen ${isExitingSplash ? "is-exiting" : ""}`}>
-                <img src={Logo} alt="Econverse" className="splash-logo" />
+            <div
+                className={`splash-screen${isExitingSplash ? " splash-screen--exiting" : ""}`}
+            >
+                <img src={Logo} alt="Econverse" className="splash-screen__logo" />
             </div>
         );
     }

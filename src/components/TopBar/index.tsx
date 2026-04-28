@@ -1,4 +1,4 @@
-import "./styles.scss";
+import styles from "./styles.module.scss";
 import ShieldIcon from "@/assets/icons/ShieldCheck.svg";
 import TruckIcon from "@/assets/icons/Truck.svg";
 import CreditCardIcon from "@/assets/icons/CreditCard.svg";
@@ -23,10 +23,10 @@ const topbarItems = [
 
 export default function TopBar() {
   return (
-    <div className="topbar" role="region" aria-label="Informações da loja">
-      <div className="topbar-container">
+    <div className={styles.root} role="region" aria-label="Informações da loja">
+      <div className={styles.container}>
         {topbarItems.map((item, index) => (
-          <div key={index} className="topbar-item">
+          <div key={index} className={styles.item}>
             <img src={item.icon} alt={item.alt} />
             <p>{item.content}</p>
           </div>

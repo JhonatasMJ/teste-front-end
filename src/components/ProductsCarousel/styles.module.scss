@@ -1,10 +1,10 @@
-.products-carousel-shell {
+.shell {
   position: relative;
   width: 100%;
   box-sizing: border-box;
 }
 
-.products-carousel-viewport {
+.viewport {
   overflow: hidden;
   width: 100%;
   padding: 8px 0 16px;
@@ -15,19 +15,19 @@
   }
 }
 
-.products-carousel-container {
+.track {
   display: flex;
   gap: 24px;
   touch-action: pan-y pinch-zoom;
   backface-visibility: hidden;
 }
 
-.products-carousel-slide {
+.slide {
   flex: 0 0 auto;
   min-width: 0;
 }
 
-.products-carousel-arrow {
+.arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -36,10 +36,9 @@
   height: 44px;
   border: 1px solid #ebebeb;
   border-radius: 50%;
-  background: var(--white-color);
-  color: var(--secondary-btn-color);
+  background: $white-color;
+  color: $secondary-btn-color;
   font-size: 1.35rem;
-  line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -57,22 +56,22 @@
     opacity: 0.35;
     cursor: not-allowed;
   }
-}
 
-.products-carousel-arrow-prev {
-  left: 8px;
-}
+  &Prev {
+    left: 8px;
+  }
 
-.products-carousel-arrow-next {
-  right: 8px;
+  &Next {
+    right: 8px;
+  }
 }
 
 @media (max-width: 900px) {
-  .products-carousel-arrow {
+  .arrow {
     display: none;
   }
 
-  .products-carousel-viewport {
+  .viewport {
     padding-left: 0;
     padding-right: 0;
   }

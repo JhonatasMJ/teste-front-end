@@ -1,4 +1,4 @@
-.product-modal-backdrop {
+.backdrop {
   position: fixed;
   inset: 0;
   z-index: 10000;
@@ -9,30 +9,27 @@
   background: rgba(0, 0, 0, 0.55);
 }
 
-.product-modal-shell {
+.shell {
   position: relative;
   width: min(960px, 100%);
   max-height: min(90vh, 720px);
   overflow: auto;
-  background: var(--white-color);
+  background: $white-color;
   border-radius: 4px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
-.product-modal-close {
+.close {
   position: absolute;
   top: 12px;
   right: 12px;
   z-index: 1;
   width: 40px;
   height: 40px;
-  border: none;
   border-radius: 4px;
   background: transparent;
-  color: var(--subtitle-color);
+  color: $subtitle-color;
   font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,12 +38,12 @@
     background 0.15s ease;
 
   &:hover {
-    color: var(--text-color);
+    color: $text-color;
     background: rgba(0, 0, 0, 0.04);
   }
 }
 
-.product-modal-body {
+.body {
   padding: 40px 32px 36px;
 
   @media (max-width: 640px) {
@@ -54,7 +51,7 @@
   }
 }
 
-.product-modal-layout {
+.layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px 40px;
@@ -66,7 +63,7 @@
   }
 }
 
-.product-modal-gallery {
+.gallery {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,38 +78,35 @@
   }
 }
 
-.product-modal-info {
+.info {
   display: flex;
   flex-direction: column;
   gap: 16px;
   min-width: 0;
 }
 
-.product-modal-title {
+.title {
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
-  color: var(--text-color);
+  color: $text-color;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
 }
 
-.product-modal-price {
+.price {
   font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: 700;
-  color: var(--text-color);
+  color: $text-color;
 }
 
-.product-modal-desc {
+.desc {
   font-size: 13px;
-  line-height: 1.55;
-  color: var(--subtitle-color);
+  color: $subtitle-color;
 }
 
-.product-modal-more {
+.more {
   font-size: 13px;
   font-weight: 600;
-  color: var(--secondary-btn-color);
+  color: $secondary-btn-color;
   text-decoration: none;
   align-self: flex-start;
   margin-top: 4px;
@@ -122,7 +116,7 @@
   }
 }
 
-.product-modal-actions {
+.actions {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -135,56 +129,50 @@
   }
 }
 
-.product-modal-qty {
+.qty {
   display: flex;
   align-items: center;
   min-height: 48px;
   border: 1px solid #d8d8d8;
   border-radius: 6px;
   overflow: hidden;
-  background: var(--white-color);
+  background: $white-color;
   flex: 1 1 140px;
   max-width: 220px;
 
   @media (max-width: 480px) {
     max-width: none;
   }
-}
 
-.product-modal-qty button {
-  width: 48px;
-  min-height: 48px;
-  border: none;
-  background: #f5f5f5;
-  color: var(--text-color);
-  font-size: 1.25rem;
-  line-height: 1;
-  cursor: pointer;
+  button {
+    width: 48px;
+    min-height: 48px;
+    background: #f5f5f5;
+    color: $text-color;
+    font-size: 1.25rem;
 
-  &:hover {
-    background: #ebebeb;
+    &:hover {
+      background: #ebebeb;
+    }
+  }
+
+  span {
+    flex: 1;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-color;
   }
 }
 
-.product-modal-qty span {
-  flex: 1;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
-.product-modal-buy {
+.buy {
   flex: 1 1 160px;
   min-height: 48px;
-  border: none;
   border-radius: 5px;
-  background: var(--primary-btn-color);
-  color: #271c47;
+  background: $primary-btn-color;
+  color: $text-color;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  cursor: pointer;
   text-transform: uppercase;
   transition: opacity 0.2s ease;
 

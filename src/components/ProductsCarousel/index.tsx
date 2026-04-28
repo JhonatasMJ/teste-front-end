@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { Product } from "@/types/productsData";
 import ProductCard from "@/components/ProductCard";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 const EMBLA_OPTIONS = {
   align: "start" as const,
@@ -42,17 +42,17 @@ export default function ProductsCarousel({ products, OnClick }: Props) {
   }, [emblaApi, products]);
 
   return (
-    <div className="products-carousel-shell">
+    <div className={styles.shell}>
       <div
-        className="products-carousel-viewport"
+        className={styles.viewport}
         ref={emblaRef}
         role="region"
         aria-label="Lista de produtos"
       >
-        <div className="products-carousel-container">
+        <div className={styles.track}>
           {products.map((product, index) => (
             <div
-              className="products-carousel-slide"
+              className={styles.slide}
               key={`${product.productName}-${index}`}
             >
               <ProductCard product={product} OnClick={OnClick} />
@@ -63,7 +63,7 @@ export default function ProductsCarousel({ products, OnClick }: Props) {
 
       <button
         type="button"
-        className="products-carousel-arrow products-carousel-arrow-prev"
+        className={`${styles.arrow} ${styles.arrowPrev}`}
         aria-label="Anterior"
         disabled={!canPrev}
         onClick={() => emblaApi?.scrollPrev()}
@@ -73,7 +73,7 @@ export default function ProductsCarousel({ products, OnClick }: Props) {
 
       <button
         type="button"
-        className="products-carousel-arrow products-carousel-arrow-next"
+        className={`${styles.arrow} ${styles.arrowNext}`}
         aria-label="Próximo"
         disabled={!canNext}
         onClick={() => emblaApi?.scrollNext()}

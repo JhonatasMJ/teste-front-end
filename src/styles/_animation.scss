@@ -1,0 +1,40 @@
+@use "./variables" as *;
+
+
+@keyframes logo-grow {
+  0% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $title-color;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+
+  &--exiting {
+    opacity: 0;
+  }
+
+  &__logo {
+    width: min(55vw, 240px);
+    animation: logo-grow 1.2s ease-out forwards;
+  }
+}

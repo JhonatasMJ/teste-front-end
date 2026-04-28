@@ -1,7 +1,5 @@
 import type { ButtonProps } from "@/types/btnProps";
-import "./styles.scss";
-
-
+import styles from "./styles.module.scss";
 
 export default function Button({
     children,
@@ -10,10 +8,11 @@ export default function Button({
     type = "button",
     onClick,
 }: ButtonProps) {
-    const buttonClass = `button button--${variant}${className ? ` ${className}` : ""}`;
+    const variantClass = variant === "primary" ? styles.primary : styles.secondary;
+    const merged = [styles.root, variantClass, className].filter(Boolean).join(" ");
 
     return (
-        <button type={type} className={buttonClass} onClick={onClick}>
+        <button type={type} className={merged} onClick={onClick}>
             {children}
         </button>
     );

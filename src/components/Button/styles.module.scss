@@ -1,0 +1,25 @@
+$radius: 5px;
+
+.root {
+  border-radius: $radius;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: opacity 0.2s ease;
+  margin-top: 24px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.primary {
+  background-color: $primary-btn-color;
+  color: $text-color;
+}
+
+.secondary {
+  background-color: $secondary-btn-color;
+  border: 1px solid $secondary-btn-color;
+  color: $white-color;
+}

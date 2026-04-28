@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import type { Product } from "@/types/productsData";
 import { formatBRL } from "@/utils/formatBRL";
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 const TITLE_ID = "product-modal-title";
 
@@ -29,36 +29,36 @@ export default function ProductModal({ product, onClose }: Props) {
   }, [onClose]);
 
   return createPortal(
-    <div className="product-modal-backdrop" onClick={onClose}>
+    <div className={styles.backdrop} onClick={onClose}>
       <div
-        className="product-modal-shell"
+        className={styles.shell}
         role="dialog"
         aria-modal="true"
         aria-labelledby={TITLE_ID}
         onClick={(e) => e.stopPropagation()}
       >
-        <button type="button" className="product-modal-close" aria-label="Fechar" onClick={onClose}>
+        <button type="button" className={styles.close} aria-label="Fechar" onClick={onClose}>
           ×
         </button>
 
-        <div className="product-modal-body">
-          <div className="product-modal-layout">
-            <div className="product-modal-gallery">
+        <div className={styles.body}>
+          <div className={styles.layout}>
+            <div className={styles.gallery}>
               <img src={product.photo} alt="" />
             </div>
 
-            <div className="product-modal-info">
-              <h2 id={TITLE_ID} className="product-modal-title">
+            <div className={styles.info}>
+              <h2 id={TITLE_ID} className={styles.title}>
                 {product.productName}
               </h2>
-              <p className="product-modal-price">{formatBRL(product.price)}</p>
-              <p className="product-modal-desc">{product.descriptionShort}</p>
-              <a href="#detalhes" className="product-modal-more" onClick={(e) => e.preventDefault()}>
+              <p className={styles.price}>{formatBRL(product.price)}</p>
+              <p className={styles.desc}>{product.descriptionShort}</p>
+              <a href="#detalhes" className={styles.more} onClick={(e) => e.preventDefault()}>
                 Veja mais detalhes do produto &gt;
               </a>
 
-              <div className="product-modal-actions">
-                <div className="product-modal-qty">
+              <div className={styles.actions}>
+                <div className={styles.qty}>
                   <button type="button" onClick={() => setQty((q) => Math.max(1, q - 1))}>
                     −
                   </button>
@@ -67,7 +67,7 @@ export default function ProductModal({ product, onClose }: Props) {
                     +
                   </button>
                 </div>
-                <button type="button" className="product-modal-buy">
+                <button type="button" className={styles.buy}>
                   COMPRAR
                 </button>
               </div>

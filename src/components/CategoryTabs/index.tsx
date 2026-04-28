@@ -1,4 +1,4 @@
-import "./styles.scss";
+import styles from "./styles.module.scss";
 
 export type CategoryTabItem = {
   id: string;
@@ -19,15 +19,15 @@ export default function CategoryTabs({
   ariaLabel = "Categorias",
 }: CategoryTabsProps) {
   return (
-    <nav className="category-tabs" aria-label={ariaLabel}>
+    <nav className={styles.nav} aria-label={ariaLabel}>
       {tabs.map((tab) => (
         <button
           key={tab.id}
           type="button"
           className={
             activeId === tab.id
-              ? "category-tabs-button category-tabs-button-is-active"
-              : "category-tabs-button"
+              ? `${styles.tab} ${styles.tabActive}`
+              : styles.tab
           }
           onClick={() => onChange(tab.id)}
         >

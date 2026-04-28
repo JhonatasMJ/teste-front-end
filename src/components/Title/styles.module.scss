@@ -1,28 +1,26 @@
-.section-heading {
+.root {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-bottom: 28px;
 }
 
-.section-heading-line {
+.line {
   flex: 1;
   height: 1px;
   background: #d8d8d8;
   min-width: 0;
 }
 
-.section-heading-title {
+.heading {
   flex-shrink: 0;
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
   font-weight: 700;
-  color: var(--title-color);
+  color: $title-color;
   text-align: center;
   white-space: nowrap;
-}
 
-@media (max-width: 640px) {
-  .section-heading-title {
+  @media (max-width: 640px) {
     white-space: normal;
     max-width: min(100%, 280px);
   }
