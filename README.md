@@ -5,9 +5,7 @@ Projeto desenvolvido em React + TypeScript com Vite.
 ## Preview do Projeto
 
 
-```md
 ![Preview do projeto](./public/print.png)
-```
 
 
 ## Como usar o projeto
