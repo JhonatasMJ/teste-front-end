@@ -1,8 +1,9 @@
 import { useState } from "react";
 import type { Product } from "@/types/productsData";
-import SectionHeading from "@/components/SectionHeading";
+import Title from "@/components/Title";
 import CategoryTabs from "@/components/CategoryTabs";
 import ProductsCarousel from "@/components/ProductsCarousel";
+import ProductModal from "@/components/ProductModal";
 import "./styles.scss";
 
 type TabId =
@@ -28,11 +29,12 @@ export type ProductsProps = {
 
 export default function Products({ products }: ProductsProps) {
   const [activeTab, setActiveTab] = useState<TabId>("celular");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
     <section className="products" aria-labelledby="products-section-title">
       <div className="products-inner">
-        <SectionHeading
+        <Title
           title="Produtos relacionados"
           titleId="products-section-title"
         />
@@ -44,7 +46,17 @@ export default function Products({ products }: ProductsProps) {
           ariaLabel="Categorias de produtos"
         />
 
-        <ProductsCarousel products={products} />
+        <ProductsCarousel
+          products={products}
+          OnClick={setSelectedProduct}
+        />
+
+        {selectedProduct && (
+          <ProductModal
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          />
+        )}
       </div>
     </section>
   );

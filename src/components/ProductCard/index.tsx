@@ -5,6 +5,7 @@ import "./styles.scss";
 
 export type ProductCardProps = {
   product: Product;
+  OnClick?: (product: Product) => void;
 };
 
 function installmentLabel(priceCents: number, installments = 2): string {
@@ -12,7 +13,7 @@ function installmentLabel(priceCents: number, installments = 2): string {
   return `ou ${installments}x de ${formatBRL(perInstallment)} sem juros`;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, OnClick }: ProductCardProps) {
   const listPrice =
     product.listPrice != null && product.listPrice > product.price
       ? product.listPrice
@@ -37,7 +38,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           </span>
         </div>
         <p className="product-card-shipping">Frete grátis</p>
-        <Button className="product-card-cta" variant="secondary">
+        <Button
+          className="product-card-cta"
+          variant="secondary"
+          type="button"
+          onClick={() => OnClick?.(product)}
+        >
           COMPRAR
         </Button>
       </div>

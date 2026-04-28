@@ -1,11 +1,11 @@
 import "./styles.scss";
 
-export type SectionHeadingProps = {
+export type TitleProps = {
   title: string;
   titleId?: string;
 };
 
-export default function SectionHeading({ title, titleId }: SectionHeadingProps) {
+export default function Title({ title, titleId }: TitleProps) {
   return (
     <div className="section-heading">
       <span className="section-heading-line" aria-hidden />

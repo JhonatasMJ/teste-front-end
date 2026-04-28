@@ -3,11 +3,17 @@ import "./styles.scss";
 
 
 
-export default function Button({ children, className, variant = "primary" }: ButtonProps) {
+export default function Button({
+    children,
+    className,
+    variant = "primary",
+    type = "button",
+    onClick,
+}: ButtonProps) {
     const buttonClass = `button button--${variant}${className ? ` ${className}` : ""}`;
 
     return (
-        <button className={buttonClass}>
+        <button type={type} className={buttonClass} onClick={onClick}>
             {children}
         </button>
     );
