@@ -4,7 +4,7 @@ import TopBar from "./components/TopBar";
 import Logo from "@/assets/Logo.svg";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
-import { productsData } from "./utils/productsData";
+import { productsData } from "./mocks/Products";
 import Products from "./components/Products";
 
 export default function App() {
@@ -37,12 +37,12 @@ export default function App() {
     }
 
     return (
-        <div>
+        <main>
             <TopBar />
             <Header />
             <Banner/>
             <Categories />
             <Products products={productsData.products} />
-        </div>
+        </main>
     );
 }

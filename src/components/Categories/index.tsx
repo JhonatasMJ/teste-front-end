@@ -1,4 +1,4 @@
-import { categoriesData } from "@/utils/categoriesData";
+import { categoriesData } from "@/mocks/Categories";
 import styles from "./styles.module.scss";
 
 export default function Categories() { 
