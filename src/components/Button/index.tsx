@@ -1,5 +1,14 @@
-import type { ButtonProps } from "@/types/btnProps";
 import styles from "./styles.module.scss";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+
+ type ButtonProps = {
+    children: ReactNode;
+    className?: string;
+    variant?: "primary" | "secondary";
+} & Pick<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    "onClick" | "type"
+>;
 
 export default function Button({
     children,
