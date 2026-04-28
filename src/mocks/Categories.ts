@@ -1,11 +1,12 @@
-import type { CategoryProps } from "@/types/categoriesProps";
+
 import DevicesIcon from "@/assets/icons/Devices.png";
-import SupermarketIcon from "@/assets/icons/Supermarket.png";
+import SupermarketIcon from "@/assets/icons/SuperMarket.png";
 import WhiskeyIcon from "@/assets/icons/Whiskey.png";
 import ToolsIcon from "@/assets/icons/Tools.png";
 import HealthIcon from "@/assets/icons/Health.png";
 import SportsIcon from "@/assets/icons/Sport.png";
 import FashionIcon from "@/assets/icons/Fashion.png";
+import type { CategoryProps } from "@/types/categoriesProps";
 
 export const categoriesData: CategoryProps[] = [
   {
