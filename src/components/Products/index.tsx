@@ -1,26 +1,19 @@
 import { useState } from "react";
 import type { Product } from "@/types/productsData";
-import Title from "@/components/Title";
 import CategoryTabs from "@/components/CategoryTabs";
 import ProductsCarousel from "@/components/ProductsCarousel";
 import ProductModal from "@/components/ProductModal";
 import styles from "./styles.module.scss";
 
-type TabId =
-  | "celular"
-  | "acessorios"
-  | "tablets"
-  | "notebooks"
-  | "tvs"
-  | "all";
 
-const PRODUCT_TABS: { id: TabId; label: string }[] = [
-  { id: "celular", label: "CELULAR" },
-  { id: "acessorios", label: "ACESSÓRIOS" },
-  { id: "tablets", label: "TABLETS" },
-  { id: "notebooks", label: "NOTEBOOKS" },
-  { id: "tvs", label: "TVS" },
-  { id: "all", label: "VER TODOS" },
+
+const PRODUCT_TABS: { id: string; label: string }[] = [
+  { id: "celular", label: "Celular" },
+  { id: "acessorios", label: "Acessórios" },
+  { id: "tablets", label: "Tablets" },
+  { id: "notebooks", label: "Notebooks" },
+  { id: "tvs", label: "TVs" },
+  { id: "all", label: "Ver todos" },
 ];
 
 export type ProductsProps = {
@@ -28,21 +21,26 @@ export type ProductsProps = {
 };
 
 export default function Products({ products }: ProductsProps) {
-  const [activeTab, setActiveTab] = useState<TabId>("celular");
+  const [activeTab, setActiveTab] = useState<string>("celular");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
     <section className={styles.section} aria-labelledby="products-section-title">
       <div className={styles.inner}>
-        <Title
-          title="Produtos relacionados"
-          titleId="products-section-title"
-        />
+        <header className={styles.head}>
+          <div className={styles.headTitle}>
+            <span className={styles.decorLine} aria-hidden />
+            <h2 id="products-section-title" className={styles.headHeading}>
+              Produtos relacionados
+            </h2>
+            <span className={styles.decorLine} aria-hidden />
+          </div>
+        </header>
 
         <CategoryTabs
           tabs={PRODUCT_TABS}
           activeId={activeTab}
-          onChange={(id) => setActiveTab(id as TabId)}
+          onChange={(id) => setActiveTab(id as string)}
           ariaLabel="Categorias de produtos"
         />
 

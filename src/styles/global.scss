@@ -1,8 +1,23 @@
 @use "./reset";
 @use "./animation";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-default;
   color: $text-color;
-  background: $white-color;
+  background: $bg-page;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba($title-color, 0.18);
+  color: $text-color;
+}
+
+main {
+  min-height: 100vh;
 }

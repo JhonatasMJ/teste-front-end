@@ -1,31 +1,41 @@
 .root {
   display: flex;
   flex-direction: column;
-  width: 304px;
-  min-width: 304px;
-  min-height: 500px;
-  border: 1px solid #ebebeb;
-  border-radius: 10px;
-  background: $white-color;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  width: 280px;
+  min-width: 280px;
+  min-height: 460px;
+  border: 1px solid $border-subtle;
+  border-radius: $radius;
+  background: $surface;
   overflow: hidden;
   flex-shrink: 0;
   scroll-snap-align: start;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba($secondary-btn-color, 0.35);
+    transform: translateY(-1px);
+  }
 }
 
 .media {
+  position: relative;
   flex: 1;
   min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 16px 8px;
+  padding: 20px 16px 12px;
+  background: #f8fafc;
 
   img {
     width: 100%;
-    max-height: 220px;
+    max-height: 200px;
     object-fit: contain;
     display: block;
+    mix-blend-mode: multiply;
   }
 }
 
@@ -33,7 +43,7 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  padding: 12px 16px 16px;
+  padding: 14px 18px 18px;
   gap: 10px;
   margin-top: auto;
 }
@@ -54,7 +64,7 @@
 }
 
 .priceOld {
-  font-size: 13px;
+  font-size: 12px;
   color: $subtitle-color;
   text-decoration: line-through;
 }
@@ -62,32 +72,45 @@
 .priceCurrent {
   font-size: 22px;
   font-weight: 700;
-  color: #000;
+  color: $text-color;
 }
 
 .installments {
-  font-size: 13px;
+  font-size: 12px;
   color: $subtitle-color;
 }
 
 .shipping {
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
   font-weight: 600;
-  color: $secondary-btn-color;
+  color: #059669;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+  }
 }
 
 .cta {
   width: 100%;
   margin-top: 4px;
-  padding: 14px 16px;
+  padding: 12px 16px;
+  border-radius: $radius;
   border: none;
-  border-radius: 5px;
-  background-color: $secondary-btn-color;
-  color: $white-color;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  &:hover {
-    opacity: 0.92;
+}
+
+@media (max-width: 480px) {
+  .root {
+    width: min(280px, 85vw);
+    min-width: min(280px, 85vw);
   }
 }

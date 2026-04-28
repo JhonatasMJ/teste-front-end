@@ -1,25 +1,43 @@
-$radius: 5px;
-
 .root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   border-radius: $radius;
   font-size: 14px;
   font-weight: 600;
-  padding: 12px 30px;
-  transition: opacity 0.2s ease;
-  margin-top: 24px;
+  padding: 12px 26px;
+  border: none;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
 
   &:hover {
-    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
 .primary {
-  background-color: $primary-btn-color;
-  color: $text-color;
+  background: $primary-btn-color;
+  color: $white-color;
+
+  &:hover {
+    background: $primary-btn-hover;
+  }
 }
 
 .secondary {
-  background-color: $secondary-btn-color;
+  background: $secondary-btn-color;
   border: 1px solid $secondary-btn-color;
   color: $white-color;
+
+  &:hover {
+    background: $title-bold-color;
+    border-color: $title-bold-color;
+  }
 }

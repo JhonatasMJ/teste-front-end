@@ -6,30 +6,30 @@
   align-items: center;
   justify-content: center;
   padding: 24px 16px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(15, 23, 42, 0.55);
 }
 
 .shell {
   position: relative;
-  width: min(960px, 100%);
-  max-height: min(90vh, 720px);
+  width: min(920px, 100%);
+  max-height: min(90vh, 760px);
   overflow: auto;
-  background: $white-color;
-  border-radius: 4px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  background: $surface;
+  border-radius: $radius;
+  border: 1px solid $border-subtle;
 }
 
 .close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   z-index: 1;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: transparent;
+  width: 42px;
+  height: 42px;
+  border-radius: $radius;
+  background: $input-color;
   color: $subtitle-color;
-  font-size: 28px;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,22 +39,22 @@
 
   &:hover {
     color: $text-color;
-    background: rgba(0, 0, 0, 0.04);
+    background: $border-subtle;
   }
 }
 
 .body {
-  padding: 40px 32px 36px;
+  padding: 44px 36px 36px;
 
   @media (max-width: 640px) {
-    padding: 48px 20px 28px;
+    padding: 52px 20px 28px;
   }
 }
 
 .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px 40px;
+  gap: 36px 44px;
   align-items: start;
 
   @media (max-width: 720px) {
@@ -67,39 +67,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 20px;
   min-height: 280px;
+  border-radius: $radius;
+  background: #f8fafc;
+  border: 1px solid $border-subtle;
 
   img {
     width: 100%;
     max-width: 320px;
     max-height: 360px;
     object-fit: contain;
+    mix-blend-mode: multiply;
   }
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   min-width: 0;
 }
 
 .title {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
   font-weight: 700;
   color: $text-color;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .price {
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 700;
   color: $text-color;
 }
 
 .desc {
-  font-size: 13px;
+  font-size: 14px;
   color: $subtitle-color;
 }
 
@@ -109,10 +113,12 @@
   color: $secondary-btn-color;
   text-decoration: none;
   align-self: flex-start;
-  margin-top: 4px;
+  margin-top: 2px;
+  transition: opacity 0.15s ease;
 
   &:hover {
     text-decoration: underline;
+    opacity: 0.9;
   }
 }
 
@@ -120,9 +126,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: 16px;
-  margin-top: 16px;
-  padding-top: 8px;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid $border-subtle;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -133,10 +140,10 @@
   display: flex;
   align-items: center;
   min-height: 48px;
-  border: 1px solid #d8d8d8;
-  border-radius: 6px;
+  border: 1px solid $border-subtle;
+  border-radius: $radius;
   overflow: hidden;
-  background: $white-color;
+  background: $surface;
   flex: 1 1 140px;
   max-width: 220px;
 
@@ -147,12 +154,13 @@
   button {
     width: 48px;
     min-height: 48px;
-    background: #f5f5f5;
+    background: $input-color;
     color: $text-color;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    transition: background 0.15s ease;
 
     &:hover {
-      background: #ebebeb;
+      background: $border-subtle;
     }
   }
 
@@ -168,15 +176,19 @@
 .buy {
   flex: 1 1 160px;
   min-height: 48px;
-  border-radius: 5px;
+  border-radius: $radius;
+  border: none;
   background: $primary-btn-color;
-  color: $text-color;
+  color: $white-color;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  transition: opacity 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
 
   &:hover {
-    opacity: 0.92;
+    transform: translateY(-1px);
+    background: $primary-btn-hover;
   }
 }

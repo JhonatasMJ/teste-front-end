@@ -1,13 +1,20 @@
 .root {
-  padding: 12px 16px;
-  max-width: 1400px;
-  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($surface, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $border-subtle;
 }
 
 .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 14px 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
 }
 
@@ -15,22 +22,47 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: clamp(12px, 3vw, 28px);
   width: 100%;
+
+  > img {
+    flex-shrink: 0;
+    height: 36px;
+    width: auto;
+  }
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 6px;
+  flex-shrink: 0;
 
   a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: $radius;
+    transition:
+      background 0.15s ease,
+      transform 0.15s ease;
+
     img {
-      transition: filter 0.2s ease;
+      width: 22px;
+      height: 22px;
+      opacity: 0.85;
+      transition: opacity 0.15s ease;
     }
 
-    &:hover img {
-      transform: scale(1.1);
+    &:hover {
+      background: $input-color;
+      transform: translateY(-1px);
+
+      img {
+        opacity: 1;
+      }
     }
   }
 }
@@ -39,33 +71,81 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #f0f0f0;
   width: 100%;
-  padding-top: 16px;
+  gap: 0;
+  flex-wrap: nowrap;
+  padding-top: 12px;
+  border-top: 1px solid $border-subtle;
   font-size: 12px;
   font-weight: 600;
 
   a {
-    display: flex;
+    flex: 0 1 auto;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: $radius;
     text-decoration: none;
     color: $subtitle-color;
-    transition: all 0.2s ease;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease;
 
     span {
-      color: $title-bold-color;
-      font-weight: 600;
+      color: $primary-btn-hover;
+      font-weight: 700;
     }
 
     &:hover {
       color: $text-color;
-      transform: scale(1.05);
+      background: $input-color;
     }
 
     img {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
+      opacity: 0.9;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .main > img {
+    height: 32px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 10px;
+    font-size: 11px;
+
+    a {
+      padding: 6px 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .main > img {
+    order: 1;
+  }
+
+  .main > div:nth-child(2) {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .actions {
+    order: 2;
+    margin-left: auto;
   }
 }

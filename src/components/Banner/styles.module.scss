@@ -1,34 +1,86 @@
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 20px 8px;
+}
+
 .root {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)),
-    url("@/assets/Banner.png");
-  width: 100%;
-  min-height: 390px;
-  display: flex;
-  align-items: center;
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(280px, 42vw, 420px);
+  border-radius: $radius;
+  overflow: hidden;
+  background-image: url("@/assets/Banner.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .content {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: clamp(28px, 5vw, 52px);
+  max-width: min(520px, 92%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: $radius;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1e1b4b;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid $border-subtle;
 }
 
 .text {
-  width: 70%;
-  font-size: 36px;
   color: $white-color;
 
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.35rem);
+    font-weight: 700;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+
   p {
-    font-size: 24px;
-    color: $white-color;
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 42ch;
   }
 
   span {
-    color: $primary-btn-color;
+    color: #fde68a;
     font-weight: 700;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 16px 16px 8px;
+  }
+
+  .root {
+    min-height: 260px;
   }
 }
