@@ -41,6 +41,31 @@ npm run build
 npm run preview
 ```
 
+## Estrutura de pastas
+
+```bash
+teste-front-end/
+├─ public/
+│  ├─ favicon.ico
+│  └─ print.png
+├─ src/
+│  ├─ assets/
+│  ├─ components/
+│  ├─ mocks/
+│  ├─ pages/
+│  ├─ styles/
+│  ├─ types/
+│  ├─ utils/
+│  ├─ App.tsx
+│  └─ main.tsx
+├─ index.html
+├─ package.json
+├─ tsconfig.json
+├─ tsconfig.app.json
+├─ vite.config.ts
+└─ README.md
+```
+
 ## Tecnologias utilizadas
 
 - React
