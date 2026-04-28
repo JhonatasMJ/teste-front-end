@@ -5,8 +5,6 @@ import ProductsCarousel from "@/components/ProductsCarousel";
 import ProductModal from "@/components/ProductModal";
 import styles from "./styles.module.scss";
 
-
-
 const PRODUCT_TABS: { id: string; label: string }[] = [
   { id: "celular", label: "Celular" },
   { id: "acessorios", label: "Acessórios" },
@@ -18,9 +16,10 @@ const PRODUCT_TABS: { id: string; label: string }[] = [
 
 export type ProductsProps = {
   products: Product[];
+  tabs: boolean;
 };
 
-export default function Products({ products }: ProductsProps) {
+export default function Products({ products, tabs }: ProductsProps) {
   const [activeTab, setActiveTab] = useState<string>("celular");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
@@ -37,12 +36,14 @@ export default function Products({ products }: ProductsProps) {
           </div>
         </header>
 
-        <CategoryTabs
-          tabs={PRODUCT_TABS}
-          activeId={activeTab}
-          onChange={(id) => setActiveTab(id as string)}
-          ariaLabel="Categorias de produtos"
-        />
+        {tabs && (
+          <CategoryTabs
+            tabs={PRODUCT_TABS}
+            activeId={activeTab}
+            onChange={(id) => setActiveTab(id as string)}
+            ariaLabel="Categorias de produtos"
+          />
+        )}
 
         <ProductsCarousel
           products={products}
