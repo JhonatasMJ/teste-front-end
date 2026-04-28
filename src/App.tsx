@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-import Header from "./components/Header";
-import TopBar from "./components/TopBar";
-import Banner from "./components/Banner";
-import Categories from "./components/Categories";
-import { productsData } from "./mocks/Products";
-import Products from "./components/Products";
-import Partners from "./components/Partners";
 import Splash from "./components/Splash";
-import Marks from "./components/Marks";
+import Home from "./pages/Home";
 
 export default function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -34,14 +27,7 @@ export default function App() {
 
     return (
         <main>
-            <TopBar />
-            <Header />
-            <Banner/>
-            <Categories />
-            <Products products={productsData.products} tabs={true} />
-            <Partners />
-            <Products products={productsData.products} tabs={false} />
-            <Marks />
+            <Home />
         </main>
     );
 }

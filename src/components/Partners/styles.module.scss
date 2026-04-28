@@ -12,7 +12,7 @@
   position: relative;
   isolation: isolate;
   width: 50%;
-  min-height: clamp(280px, 42vw, 420px);
+  min-height: clamp(280px, 42vw, 320px);
   border-radius: $radius;
   overflow: hidden;
   background-image: url("@/assets/Partners.png");
