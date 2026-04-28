@@ -11,7 +11,7 @@ import CrownIcon from "@/assets/icons/Crown.svg";
 export default function Header() {
     return (
         <header className={styles.root}>
-            <div className={styles.container}>
+            <div className={`${styles.container} container`}>
                 <div className={styles.main}>
                     <img src={Logo} alt="Econverse" />
                     <SearchInput />

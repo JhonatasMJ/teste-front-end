@@ -3,6 +3,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import type { Product } from "@/types/productsData";
 import ProductCard from "@/components/ProductCard";
 import styles from "./styles.module.scss";
+import ArrowLeftIcon from "@/assets/icons/ArrowLeft.svg";
+import ArrowRightIcon from "@/assets/icons/ArrowRight.svg";
 
 const EMBLA_OPTIONS = {
   align: "start" as const,
@@ -68,7 +70,7 @@ export default function ProductsCarousel({ products, OnClick }: Props) {
         disabled={!canPrev}
         onClick={() => emblaApi?.scrollPrev()}
       >
-        ‹
+        <img src={ArrowLeftIcon} alt="Anterior" />
       </button>
 
       <button
@@ -78,7 +80,7 @@ export default function ProductsCarousel({ products, OnClick }: Props) {
         disabled={!canNext}
         onClick={() => emblaApi?.scrollNext()}
       >
-        ›
+        <img src={ArrowRightIcon} alt="Próximo" />
       </button>
     </div>
   );

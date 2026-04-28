@@ -2,17 +2,13 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 .viewport {
   overflow: hidden;
   width: 100%;
   padding: 12px 0 20px;
-
-  @media (min-width: 901px) {
-    padding-left: 56px;
-    padding-right: 56px;
-  }
 }
 
 .track {
@@ -23,7 +19,7 @@
 }
 
 .slide {
-  flex: 0 0 auto;
+  flex: 0 0 calc((100% - 60px) / 4);
   min-width: 0;
 }
 
@@ -61,21 +57,26 @@
   }
 
   &Prev {
-    left: 4px;
+    left: -24px;
   }
 
   &Next {
-    right: 4px;
+    right: -24px;
   }
 }
 
 @media (max-width: 900px) {
+  .slide {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+
   .arrow {
     display: none;
   }
+}
 
-  .viewport {
-    padding-left: 0;
-    padding-right: 0;
+@media (max-width: 640px) {
+  .slide {
+    flex-basis: 100%;
   }
 }

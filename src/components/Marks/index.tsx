@@ -8,7 +8,7 @@ export default function Marks() {
 
     return (
         <section className={styles.section} aria-label="Marks">
-            <div className={styles.inner}>
+            <div className={`${styles.inner} container`}>
                 <header className={styles.head}>
                     <div className={styles.headTitle}>
                         <span className={styles.decorLine} aria-hidden />

@@ -4,7 +4,8 @@ import styles from "./styles.module.scss";
 export default function Banner() {
     return (
         <section className={styles.wrapper} aria-label="Destaque promocional">
-            <div className={styles.root}>
+            <div className="container">
+                <div className={styles.root}>
                 <div className={styles.overlay} aria-hidden />
                 <div className={styles.content}>
                     <span className={styles.badge}>Promoção</span>
@@ -16,6 +17,7 @@ export default function Banner() {
                     </div>
                     <Button variant="primary">Ver ofertas</Button>
                 </div>
+            </div>
             </div>
         </section>
     );

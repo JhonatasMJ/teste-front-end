@@ -23,8 +23,8 @@ const topbarItems = [
 
 export default function TopBar() {
   return (
-    <div className={styles.root} role="region" aria-label="Informações da loja">
-      <div className={styles.container}>
+    <section className={styles.root} aria-label="Informações da loja">
+      <div className={`${styles.container} container`}>
         {topbarItems.map((item, index) => (
           <div key={index} className={styles.item}>
             <img src={item.icon} alt={item.alt} />
@@ -32,6 +32,6 @@ export default function TopBar() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

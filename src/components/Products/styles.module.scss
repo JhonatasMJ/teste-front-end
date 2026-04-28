@@ -1,11 +1,9 @@
 .section {
-  padding: 32px 20px 72px;
+  padding: 24px 20px 0;
   background: $bg-page;
 }
 
 .inner {
-  max-width: 1400px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
