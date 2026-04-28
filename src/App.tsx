@@ -6,6 +6,7 @@ import Banner from "./components/Banner";
 import Categories from "./components/Categories";
 import { productsData } from "./mocks/Products";
 import Products from "./components/Products";
+import Partners from "./components/Partners";
 
 export default function App() {
     const [showSplash, setShowSplash] = useState(true);
@@ -45,6 +46,7 @@ export default function App() {
             <Banner/>
             <Categories />
             <Products products={productsData.products} />
+            <Partners />
         </main>
     );
 }
