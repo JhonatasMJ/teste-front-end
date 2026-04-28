@@ -16,6 +16,8 @@ export default function Home() {
             <Header />
             <Banner />
             <Categories />
+            <Products products={productsData.products} tabs={true} />
+            <Partners />
             <Products products={productsData.products} tabs={false} />
             <Partners />
             <Marks />
