@@ -25,9 +25,5 @@ export default function App() {
         return <Splash isExitingSplash={isExitingSplash} />;
     }
 
-    return (
-        <main>
-            <Home />
-        </main>
-    );
+    return <Home />;
 }
